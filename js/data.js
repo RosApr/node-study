@@ -1,3 +1,4 @@
+var resData = ''
 function getData(data){
-	alert(data);
+	resData = data;
 }
