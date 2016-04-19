@@ -1,6 +1,6 @@
-function route(handle, pathname, response, channel){
+function route(handle, pathname, response, channel, isChannel){
   console.log("About to route a request for "+ pathname);
-  if(typeof handle[pathname] === 'function'){
+  if(typeof handle[pathname] === 'function' && isChannel === 'channel' && channel != ''){
     handle[pathname](response, channel);
   }else{
     console.log("No request handler found for "+ pathname);
