@@ -1,7 +1,7 @@
-function route(handle, pathname, response, channel, isChannel){
+function route(handle, pathname, response, channel, isChannel, callback){
   console.log("About to route a request for "+ pathname);
-  if(typeof handle[pathname] === 'function' && isChannel === 'channel' && channel != ''){
-    handle[pathname](response, channel);
+  if(typeof handle[pathname] === 'function' && isChannel === true && channel != '' && callback != ''){
+    handle[pathname](response, channel, callback);
   }else{
     console.log("No request handler found for "+ pathname);
     response.writeHead(404,{"Content-Type":"text/plain"});
