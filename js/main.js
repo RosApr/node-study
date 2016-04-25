@@ -23,11 +23,16 @@ require(['jquery'], function(){
     //var channel = 'sportnews',
     var channel = channelArray[Math.floor(channelArray.length*Math.random())],
         //serverUrl = 'http://192.168.9.248:8888/';
-        serverUrl = 'http://192.168.1.106:8888/';
+        serverUrl = 'http://192.168.1.106:8888/',
+        isloading = false;
     renderingBody({ newschannel: channelArray, url: serverUrl });
     $(window).on('scroll', { newschannel: channelArray, url: serverUrl }, renderingBody);
 
     function renderingBody(data){
+        if(isloading){
+            return true;
+        }
+        isloading = true;
         var channelArray = data['newschannel'] || data.data.newschannel,
             _channel = channelArray[Math.floor(channelArray.length*Math.random())] || channelArray[Math.floor(channelArray.length*Math.random())],
             url = data['url'] || data.data.url,
@@ -43,7 +48,7 @@ require(['jquery'], function(){
 
                     var html = Mustache.render(template, newslistend);
                     renderingnews(html);
-
+                    isloading = false;
                     function renderingnews(liStr){
                         var $ul = $('body').find('.content') || '';
                         if($ul.size() > 0){

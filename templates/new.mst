@@ -1,8 +1,8 @@
 {{#items}}
 <li>
-    <div data-href={{link}} >
+    <a class='item' href={{link}} >
         <img src={{thub}} alt="" />
         <p>{{title}}</p>
-    </div>
+    </a>
 </li>
 {{/items}}
