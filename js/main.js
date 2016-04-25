@@ -19,18 +19,24 @@ require(['jquery'], function(){
     ////qq rss
     //case 'qqnews':
     //$(window).trigger('scroll');
-    var channel = 'sportnews';
-    renderingBody({ newschannel: channel });
-    $(window).on('scroll', { newschannel: channel }, renderingBody);
+    var channelArray = ['civilnews','internews','housenews','mil','autonews','sportnews'];
+    //var channel = 'sportnews',
+    var channel = channelArray[Math.floor(channelArray.length*Math.random())],
+        //serverUrl = 'http://192.168.9.248:8888/';
+        serverUrl = 'http://192.168.1.106:8888/';
+    renderingBody({ newschannel: channelArray, url: serverUrl });
+    $(window).on('scroll', { newschannel: channelArray, url: serverUrl }, renderingBody);
 
     function renderingBody(data){
-        var _channel = data['newschannel'] || data.data.newschannel;
-        var $body = $('body');
-        var bodyScrollTop = $body.scrollTop();
-        var screenHeight = $(window).height();
-        var bodyHeight = $body.height();
+        var channelArray = data['newschannel'] || data.data.newschannel,
+            _channel = channelArray[Math.floor(channelArray.length*Math.random())] || channelArray[Math.floor(channelArray.length*Math.random())],
+            url = data['url'] || data.data.url,
+            $body = $('body'),
+            bodyScrollTop = $body.scrollTop(),
+            screenHeight = $(window).height(),
+            bodyHeight = $body.height();
         if(bodyHeight - screenHeight - bodyScrollTop < 20){
-            require(['jsonp!http://192.168.9.248:8888/?channel=' + _channel], function(newslist) {
+            require(['jsonp!' + url + '?channel=' + _channel], function(newslist) {
                 console.log(newslist);
                 var newslistend = getEndnewsList(newslist);
                 require(['mustache-js', 'text!../templates/new.mst'], function (Mustache, template) {
