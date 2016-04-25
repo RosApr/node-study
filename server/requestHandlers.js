@@ -10,8 +10,6 @@ function getChannel(response, channel, callback){
 	var rssUrl = getChannelUrl(channel);
 	console.log('channel:'+channel);
 	if(!rssUrl){
-		console.log(rssUrl);
-		// console.log("No request handler found for "+ pathname);
 	    response.writeHead(404,headers);
 	    response.write("404 Not found");
 	    response.end();
@@ -23,27 +21,9 @@ function getChannel(response, channel, callback){
 
 		  parseString(string, { explicitArray : false, ignoreAttrs : true }, function (err, result) {
 
-			    // response.setHeader('Access-Control-Allow-Origin', '*');
-			    // var _data = "getData('" + JSON.stringify(result) + "');";
-			     // var _data = callback + "('" + JSON.stringify(result) + "');";
-			    // var _data = 'getData' + "('" + JSON.stringify(result) + "');";
-			    // var _data = "getData('" + JSON.stringify(result) + "');";
-			    console.log(typeof (result + ' '));
 			    var _data = JSON.stringify(result['rss']);
-			    var string = result['rss'] + '';
-			    console.log(string);
-			    // console.log(typeof result);
-			    // console.log(_data);
-			      // IE8 does not allow domains to be specified, just the *
-			      // headers["Access-Control-Allow-Origin"] = req.headers.origin;
-			      // headers["Access-Control-Allow-Origin"] = "*";
-	  	  		// response.writeHead(200,{"Content-Type":"text/html;charset=utf-8"});
 	  	  		response.writeHead(200,headers);
-	  	  		// response.write(_data);
-	  	  		// response.write(callback + "({'name':'mark'})");
 	  	  		response.write(callback + "(" + _data + ")");
-
-	  	  		console.log('over');
 	  	  		response.end();
 		  });
 
@@ -53,6 +33,7 @@ function getChannel(response, channel, callback){
 }
 function getChannelUrl(channel){
 	switch(channel){
+		//baidu rss
 		case 'civilnews':
 			return 'http://news.baidu.com/n?cmd=1&class=civilnews&tn=rss';
 		break;
@@ -71,6 +52,9 @@ function getChannelUrl(channel){
 		case 'sportnews':
 			return 'http://news.baidu.com/n?cmd=1&class=sportnews&tn=rss';
 		break;
+		//qq rss
+		case 'qqnews':
+			return 'http://news.qq.com/newsgn/rss_newsgn.xml';
 		default:
 			return;
 
