@@ -12,7 +12,7 @@ function start(route, handle){
           channel,
           callback;
       if(query != '' && query.indexOf('&') >= 0){
-        var queryArr = query.split('&');
+        queryArr = query.split('&');
         var i = 0, _len = queryArr.length;
         for(;i<_len;i++){
           var _queryPrison = queryArr[i].split('=');
@@ -24,7 +24,6 @@ function start(route, handle){
       isChannel = !!queryObj['channel'];
       channel = queryObj['channel'] || '';
       callback = queryObj['callback'] || null;
-      console.log(queryObj);
 
       route(handle, pathname, response, channel, isChannel, callback);
     }

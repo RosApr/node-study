@@ -20,8 +20,8 @@ function getChannel(response, channel, callback){
 		  if (err) return console.log(err);
 
 		  parseString(string, { explicitArray : false, ignoreAttrs : true }, function (err, result) {
-
-			    var _data = JSON.stringify(result['rss']);
+                var newsList = result['rss']['channel']['item'];
+			    var _data = JSON.stringify(newsList);
 	  	  		response.writeHead(200,headers);
 	  	  		response.write(callback + "(" + _data + ")");
 	  	  		response.end();
@@ -31,6 +31,11 @@ function getChannel(response, channel, callback){
 
 	}
 }
+//function makeData(newsitems){
+//    //var newsitems = xmldata
+//    $.each()
+//    return ;
+//}
 function getChannelUrl(channel){
 	switch(channel){
 		//baidu rss

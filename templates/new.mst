@@ -1,0 +1,8 @@
+{{#items}}
+<li>
+    <div data-href={{link}} >
+        <img src={{thub}} alt="" />
+        <p>{{title}}</p>
+    </div>
+</li>
+{{/items}}
