@@ -22,25 +22,25 @@ require(['jquery'], function(){
     var channelArray = ['civilnews','internews','housenews','mil','autonews','sportnews'];
     //var channel = 'sportnews',
     var channel = channelArray[Math.floor(channelArray.length*Math.random())],
-        //serverUrl = 'http://192.168.9.248:8888/';
-        serverUrl = 'http://192.168.1.106:8888/',
-        isloading = false;
+        serverUrl = 'http://192.168.9.248:8888/';
+        //serverUrl = 'http://192.168.1.106:8888/',
     renderingBody({ newschannel: channelArray, url: serverUrl });
     $(window).on('scroll', { newschannel: channelArray, url: serverUrl }, renderingBody);
 
     function renderingBody(data){
-        if(isloading){
+        var $body = $('body');
+
+            if($body.hasClass('loading')){
             return true;
         }
-        isloading = true;
+        $body.addClass('loading');
         var channelArray = data['newschannel'] || data.data.newschannel,
             _channel = channelArray[Math.floor(channelArray.length*Math.random())] || channelArray[Math.floor(channelArray.length*Math.random())],
             url = data['url'] || data.data.url,
-            $body = $('body'),
             bodyScrollTop = $body.scrollTop(),
             screenHeight = $(window).height(),
             bodyHeight = $body.height();
-        if(bodyHeight - screenHeight - bodyScrollTop < 20){
+        if(bodyHeight - screenHeight - bodyScrollTop < 10){
             require(['jsonp!' + url + '?channel=' + _channel], function(newslist) {
                 console.log(newslist);
                 var newslistend = getEndnewsList(newslist);
@@ -48,7 +48,7 @@ require(['jquery'], function(){
 
                     var html = Mustache.render(template, newslistend);
                     renderingnews(html);
-                    isloading = false;
+                    $('body').removeClass('loading');
                     function renderingnews(liStr){
                         var $ul = $('body').find('.content') || '';
                         if($ul.size() > 0){

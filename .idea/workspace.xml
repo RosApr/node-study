@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5032b5c-fdfc-480a-8d69-0a99c002a589" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/less/main.less" afterPath="$PROJECT_DIR$/less/main.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/new.mst" afterPath="$PROJECT_DIR$/templates/new.mst" />
     </list>
     <ignored path="rss-study.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,11 +24,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="main.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/less/main.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30047694">
-              <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.44515103">
+              <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -49,8 +57,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.586207">
-              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+            <state vertical-scroll-proportion="-8.275862">
+              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -132,8 +140,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -149,6 +155,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="rss-study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rss-study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rss-study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="less" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -196,6 +216,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,7 +292,7 @@
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1898332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1477363" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -299,8 +321,151 @@
     <entry file="file://$PROJECT_DIR$/less/main.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="1" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/new.mst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/less/main.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/new.mst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/new.mst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/new.mst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/less/main.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="1" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -340,7 +505,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -381,22 +545,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.586207">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/less/main.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16666667">
-          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/new.mst">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -405,10 +553,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/less/main.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.275862">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30047694">
-          <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.44515103">
+          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
           <folding />
         </state>
       </provider>
