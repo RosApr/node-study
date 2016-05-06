@@ -4,11 +4,15 @@ requirejs.config({
 		'jquery': '../bower_components/jQuery/jquery.min',
 		'jsonp': 'jsonp',
         'text': '../bower_components/text/text',
-        'mustache-js': '../bower_components/mustache.js/mustache.min'
+        'mustache-js': '../bower_components/mustache.js/mustache.min',
+        'pace': '../bower_components/PACE/pace.min'
 	}
 });
-require(['jquery'], function(){
-	
+require(['jquery','pace'], function($, pace){
+    //pace.start({
+    //    document: true,
+    //    ajax: true
+    //});
     ////baidu rss
     //case 'civilnews':
     //case 'internews':
@@ -25,33 +29,46 @@ require(['jquery'], function(){
         serverUrl = 'http://192.168.9.248:8888/';
         //serverUrl = 'http://192.168.1.106:8888/',
     renderingBody({ newschannel: channelArray, url: serverUrl });
-    $(window).on('scroll', { newschannel: channelArray, url: serverUrl }, renderingBody);
 
+    (function(){
+        var body = document.body;
+        var html = document.documentElement;
+        //console.log(Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.offsetHeight,html.scrollHeight));
+    })();
+    $(window).on('scroll', { newschannel: channelArray, url: serverUrl }, renderingBody);
     function renderingBody(data){
+        //pace.restart();
         var $body = $('body');
 
-            if($body.hasClass('loading')){
+        if($body.hasClass('loading')){
             return true;
         }
-        $body.addClass('loading');
         var channelArray = data['newschannel'] || data.data.newschannel,
             _channel = channelArray[Math.floor(channelArray.length*Math.random())] || channelArray[Math.floor(channelArray.length*Math.random())],
             url = data['url'] || data.data.url,
             bodyScrollTop = $body.scrollTop(),
             screenHeight = $(window).height(),
             bodyHeight = $body.height();
-        if(bodyHeight - screenHeight - bodyScrollTop < 10){
+        if(bodyHeight - screenHeight - bodyScrollTop < 100){
+            $body.addClass('loading');
+            //$body.find('ul').size() > 0 && (
+            //    $body.find('ul').append($("<div class='loadingTip' id='loadingTip'>").text('加载中...'))
+            //);
             require(['jsonp!' + url + '?channel=' + _channel], function(newslist) {
-                console.log(newslist);
                 var newslistend = getEndnewsList(newslist);
                 require(['mustache-js', 'text!../templates/new.mst'], function (Mustache, template) {
 
                     var html = Mustache.render(template, newslistend);
                     renderingnews(html);
                     $('body').removeClass('loading');
+                    if($body.height() < $(window).height()){
+                        console.log('needs load again!');
+                        renderingBody({ newschannel: channelArray, url: serverUrl });
+                    }
                     function renderingnews(liStr){
                         var $ul = $('body').find('.content') || '';
                         if($ul.size() > 0){
+                            //$ul.remove('#loadingTip').append($(liStr));
                             $ul.append($(liStr));
                         }else{
                             $("<ul class='content'>").html(liStr).appendTo('body');
@@ -85,3 +102,13 @@ require(['jquery'], function(){
     }
 
 });
+
+/*
+jQuery get body or document height
+var body = document.body,
+    html = document.documentElement;
+
+var height = Math.max( body.scrollHeight, body.offsetHeight,
+    html.clientHeight, html.scrollHeight, html.offsetHeight );
+
+*/
