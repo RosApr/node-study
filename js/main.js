@@ -27,6 +27,7 @@ require(['jquery','pace'], function($, pace){
     //var channel = 'sportnews',
     var channel = channelArray[Math.floor(channelArray.length*Math.random())],
         serverUrl = 'http://192.168.9.248:8888/';
+    var tips = {loading:'正在加载...', loaded: '加载已完成'};
         //serverUrl = 'http://192.168.1.106:8888/',
     renderingBody({ newschannel: channelArray, url: serverUrl });
 
@@ -51,6 +52,8 @@ require(['jquery','pace'], function($, pace){
             bodyHeight = $body.height();
         if(bodyHeight - screenHeight - bodyScrollTop < 100){
             $body.addClass('loading');
+            $("#tip").text(tips['loading']);
+            pace.start();
             //$body.find('ul').size() > 0 && (
             //    $body.find('ul').append($("<div class='loadingTip' id='loadingTip'>").text('加载中...'))
             //);
@@ -71,8 +74,10 @@ require(['jquery','pace'], function($, pace){
                             //$ul.remove('#loadingTip').append($(liStr));
                             $ul.append($(liStr));
                         }else{
-                            $("<ul class='content'>").html(liStr).appendTo('body');
+                            $("<ul class='content'>").html(liStr).insertBefore($('#tip'));
                         }
+                        $("#tip").text(tips['loaded']);
+                        pace.stop();
                     }
                 });
                 function getEndnewsList(newslist){
