@@ -26,7 +26,7 @@ require(['jquery','pace'], function($, pace){
     var channelArray = ['civilnews','internews','housenews','mil','autonews','sportnews'];
     //var channel = 'sportnews',
     var channel = channelArray[Math.floor(channelArray.length*Math.random())],
-        serverUrl = 'http://192.168.9.248:8888/';
+        serverUrl = 'http://192.168.9.109:8888/';
     var tips = {loading:'正在加载...', loaded: '加载已完成'};
         //serverUrl = 'http://192.168.1.106:8888/',
     renderingBody({ newschannel: channelArray, url: serverUrl });
@@ -60,6 +60,9 @@ require(['jquery','pace'], function($, pace){
             require(['jsonp!' + url + '?channel=' + _channel], function(newslist) {
                 var newslistend = getEndnewsList(newslist);
                 require(['mustache-js', 'text!../templates/new.mst'], function (Mustache, template) {
+                    // execImg(newslistend["items"], function(){
+                        
+                    // });
 
                     var html = Mustache.render(template, newslistend);
                     renderingnews(html);
@@ -77,6 +80,16 @@ require(['jquery','pace'], function($, pace){
                             $("<ul class='content'>").html(liStr).insertBefore($('#tip'));
                         }
                         $("#tip").text(tips['loaded']);
+                        setTimeout(function(){
+                            Array.prototype.forEach.call($(".content").find("img"), function(ele){
+                                console.log($(ele).prop("naturalWidth"));
+                                if($(ele).prop("naturalWidth") == 1){
+                                    console.log("error img!");
+                                    console.log($(ele).next().text());
+                                    $(ele).attr("src", "./images/rssBg.jpg");
+                                }
+                            });
+                        }, 500);
                         pace.stop();
                     }
                 });
@@ -98,7 +111,31 @@ require(['jquery','pace'], function($, pace){
                     });
                     return { items: _newslistend };
                 }
+                 function execImg (imgs,callback) {
+                    var imgsLen = imgs.length;
+                    var loaded = 0;
+                    for (var i = 0; i < imgsLen; i++) {
+                        var imgDOM = document.createElement('img');
+                        imgDOM.src = imgs[i]["thub"];
+                        (function(i){
+                            imgDOM.onload = function () {
+                                loaded++;
+                                console.log("img loaded");
+                                console.log(imgDOM.naturalWidth);
+                                if(imgDOM.naturalWidth == "0"){
+                                    console.log("img error!");
+                                    imgs[i]["thub"] = "./images/rssBg.jpg";
+                                }
+                                if (loaded == imgsLen) {
+                                    setTimeout(function () {
+                                        callback()
+                                    },500)
+                                }
+                            }
+                        })(i);
 
+                    }
+                }    
             });
 
         }
