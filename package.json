@@ -1,0 +1,19 @@
+{
+  "name": "rss-study",
+  "version": "1.0.0",
+  "description": "rss node",
+  "main": "index.js",
+  "dependencies": {
+    "gbk": "^0.1.0",
+    "iconv-lite": "^0.4.13",
+    "querystring": "^0.2.0",
+    "request": "^2.74.0",
+    "xml2js": "^0.4.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "RosApr",
+  "license": "ISC"
+}

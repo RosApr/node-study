@@ -8,7 +8,7 @@ requirejs.config({
         'pace': '../bower_components/PACE/pace.min'
 	}
 });
-require(['jquery','pace'], function($, pace){
+require(['jquery','pace', "./js/conf.js"], function($, pace, serverUrl){
     //pace.start({
     //    document: true,
     //    ajax: true
@@ -25,18 +25,16 @@ require(['jquery','pace'], function($, pace){
     //$(window).trigger('scroll');
     var channelArray = ['civilnews','internews','housenews','mil','autonews','sportnews'];
     //var channel = 'sportnews',
-    var channel = channelArray[Math.floor(channelArray.length*Math.random())],
-        serverUrl = 'http://192.168.9.109:8888/';
+    var channel = channelArray[Math.floor(channelArray.length*Math.random())];
     var tips = {loading:'正在加载...', loaded: '加载已完成'};
-        //serverUrl = 'http://192.168.1.106:8888/',
-    renderingBody({ newschannel: channelArray, url: serverUrl });
+    renderingBody({ newschannel: channelArray, url: serverUrl.serverUrl });
 
     (function(){
         var body = document.body;
         var html = document.documentElement;
         //console.log(Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.offsetHeight,html.scrollHeight));
     })();
-    $(window).on('scroll', { newschannel: channelArray, url: serverUrl }, renderingBody);
+    $(window).on('scroll', { newschannel: channelArray, url: serverUrl.serverUrl }, renderingBody);
     function renderingBody(data){
         //pace.restart();
         var $body = $('body');
@@ -69,7 +67,7 @@ require(['jquery','pace'], function($, pace){
                     $('body').removeClass('loading');
                     if($body.height() < $(window).height()){
                         console.log('needs load again!');
-                        renderingBody({ newschannel: channelArray, url: serverUrl });
+                        renderingBody({ newschannel: channelArray, url: serverUrl.serverUrl });
                     }
                     function renderingnews(liStr){
                         var $ul = $('body').find('.content') || '';
